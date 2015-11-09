@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-RUN yum install -y rpm-build wget git
+RUN yum install -y rpm-build wget git make
 
 # Install Go 1.5
 RUN wget --quiet https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz ;\
