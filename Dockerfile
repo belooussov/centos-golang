@@ -1,12 +1,17 @@
 FROM centos:centos7
 
-RUN yum install -y rpm-build wget git make go
+RUN yum install -y rpm-build wget git make go glibc-devel.i686 mock sudo
 
 # Install Go 1.5
 RUN set -ex ;\
     wget --no-check-certificate https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz ;\
     tar -C /usr/local -xzf /go1.6.2.linux-amd64.tar.gz ;\
     rm -f /go1.6.2.linux-amd64.tar.gz
+
+RUN set -ex ;\
+    useradd build ;\
+    echo "build    ALL=NOPASSWD: ALL" >/etc/sudoers.d/build ;\
+    groupmems -a build -g mock
 
 # Configure Go
 ENV GOROOT /usr/local/go
