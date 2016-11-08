@@ -35,5 +35,4 @@ RUN mkdir -p ${GOPATH}/src ${GOPATH}/src/bin
 RUN go get github.com/Masterminds/glide
 
 WORKDIR /go
-
-ENTRYPOINT "make"
+ENTRYPOINT ["make"]
