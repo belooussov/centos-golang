@@ -1,5 +1,5 @@
 NAME=centos-golang
-REL=1.7.3
+REL=1.7.4
 USER=mickep76
 
 all: push
