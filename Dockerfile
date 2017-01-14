@@ -10,7 +10,7 @@ RUN set -ex ;\
 # Install Go 32 bit
 RUN set -ex ;\
     wget --no-check-certificate https://storage.googleapis.com/golang/go${REL}.linux-386.tar.gz ;\
-    tar -C /usr/local -xzf /go1.7.3.linux-386.tar.gz ;\
+    tar -C /usr/local -xzf /go${REL}.linux-386.tar.gz ;\
     mv /usr/local/go /usr/local/go32 ;\
     rm -f /go${REL}.linux-386.tar.gz
 
